@@ -1,0 +1,17 @@
+title: Dipak Krishnan
+description: Engineer based in New York
+url: "https://dipakkrishnan.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Permalinks
+permalink: /posts/:title/
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
