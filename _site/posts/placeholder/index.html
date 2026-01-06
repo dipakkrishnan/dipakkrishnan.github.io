@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title Here | Dipak Krishnan</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            background: #f8faf5;
+            color: #222;
+            font-family: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 48px auto 0 auto;
+            padding: 0 24px 48px 24px;
+            background: none;
+            box-shadow: none;
+        }
+        nav {
+            margin-bottom: 40px;
+        }
+        nav a {
+            color: #222;
+            text-decoration: none;
+            margin-right: 24px;
+            font-size: 1.1em;
+        }
+        nav a:hover, nav a.active {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: normal;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+            font-weight: normal;
+            margin-top: 1.5em;
+        }
+        a {
+            color: #3b6cb7;
+            text-decoration: underline;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-left: 32px;
+        }
+        /* Code blocks */
+        pre {
+            background: #f0f0f0;
+            padding: 16px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        code {
+            font-family: 'SF Mono', Consolas, monospace;
+            font-size: 0.9em;
+        }
+        /* Post list */
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        .post-list li {
+            margin-bottom: 1em;
+        }
+        .post-date {
+            color: #888;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 8px 24px 8px;
+            }
+            nav a {
+                margin-right: 16px;
+            }
+            .profile-image {
+                width: 140px;
+                height: 140px;
+                margin-left: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" >Home</a>
+            <a href="/posts" class="active">Posts</a>
+        </nav>
+        <article>
+    <header>
+        <h1>Post Title Here</h1>
+        <p class="post-date">January 05, 2026</p>
+    </header>
+    <p>Your content goes here.</p>
+
+<h2 id="section-heading">Section heading</h2>
+
+<p>Write your content in Markdown.</p>
+
+<ul>
+  <li>Bullet points work</li>
+  <li><strong>Bold</strong> and <em>italic</em> too</li>
+  <li><a href="https://example.com">Links</a> like this</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Code blocks with syntax highlighting
+</span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, world!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+    <hr style="margin-top: 48px; border: none; border-top: 1px solid #ddd;">
+    <p><a href="/posts">&larr; Back to all posts</a></p>
+</article>
+
+    </div>
+</body>
+</html>
