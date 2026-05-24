@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+
+const { title = 'Dipak Krishnan', active = 'home', description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description ?? 'Personal site and writing by Dipak Krishnan.'} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        <a href="/" class={active === 'home' ? 'active' : undefined}>Home</a>
+        <a href="/posts/" class={active === 'posts' ? 'active' : undefined}>Posts</a>
+      </nav>
+      <slot />
+    </div>
+  </body>
+</html>

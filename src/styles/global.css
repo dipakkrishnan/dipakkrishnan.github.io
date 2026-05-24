@@ -1,0 +1,163 @@
+html,
+body {
+  background: #f8faf5;
+  color: #222;
+  font-family: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: #3b6cb7;
+  text-decoration: underline;
+}
+
+.container {
+  background: none;
+  box-shadow: none;
+  margin: 48px auto 0;
+  max-width: 720px;
+  padding: 0 24px 56px;
+}
+
+nav {
+  margin-bottom: 40px;
+}
+
+nav a {
+  color: #222;
+  font-size: 1.1em;
+  margin-right: 24px;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  margin-top: 1.6em;
+}
+
+p,
+li {
+  line-height: 1.45;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.82em;
+}
+
+pre {
+  background: #eef2e8;
+  border-radius: 8px;
+  overflow-x: auto;
+  padding: 16px;
+}
+
+.profile-layout {
+  align-items: flex-start;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.profile-copy {
+  flex: 1;
+}
+
+.profile-image {
+  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
+  width: 180px;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 24px;
+}
+
+.post-list h2 {
+  font-size: 1.25em;
+  margin: 0 0 4px;
+}
+
+.post-meta {
+  color: #687065;
+  font-size: 0.85em;
+  margin: 0 0 8px;
+}
+
+.post-summary {
+  margin: 0;
+}
+
+.interactive-panel {
+  background: #eef2e8;
+  border: 1px solid #dbe2d4;
+  border-radius: 8px;
+  margin: 28px 0;
+  padding: 18px;
+}
+
+.interactive-panel h3 {
+  margin: 0 0 10px;
+}
+
+.interactive-panel button {
+  background: #222;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 12px;
+}
+
+@media (max-width: 600px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 0 14px 32px;
+  }
+
+  nav a {
+    margin-right: 16px;
+  }
+
+  .profile-layout {
+    gap: 16px;
+  }
+
+  .profile-image {
+    height: 140px;
+    width: 140px;
+  }
+}

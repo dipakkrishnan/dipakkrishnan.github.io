@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { formatPostDate } from '../../utils/dates';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts
+    .filter((post) => post.data.draft !== true)
+    .map((post) => ({
+      params: { slug: post.data.slug },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | Dipak Krishnan`} active="posts" description={post.data.summary}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <p class="post-meta">{formatPostDate(post.data.date)}</p>
+    <Content />
+  </article>
+</BaseLayout>

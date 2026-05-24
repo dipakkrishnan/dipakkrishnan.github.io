@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { formatPostDate } from '../../utils/dates';
+
+const posts = await getCollection('posts');
+const publishedPosts = posts
+  .filter((post) => post.data.draft !== true)
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+---
+
+<BaseLayout title="Posts | Dipak Krishnan" active="posts" description="Writing by Dipak Krishnan.">
+  <h1>Posts</h1>
+
+  {publishedPosts.length === 0 ? (
+    <p>Posts coming soon.</p>
+  ) : (
+    <ul class="post-list">
+      {publishedPosts.map((post) => (
+        <li>
+          <h2><a href={`/posts/${post.data.slug}/`}>{post.data.title}</a></h2>
+          <p class="post-meta">{formatPostDate(post.data.date)}</p>
+          {post.data.summary && <p class="post-summary">{post.data.summary}</p>}
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
