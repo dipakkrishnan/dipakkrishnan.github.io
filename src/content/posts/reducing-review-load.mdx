@@ -109,6 +109,8 @@ I ran the tool on the following ML [paper](https://arxiv.org/abs/2605.22472) - s
 
 The run still contained a couple flaws. The paper's v2 also corrected a posterior formula and a row/column mistake that the review missed, and the report's empirical-design concerns went unaddressed in v2, so those remain open findings. Finally, I audited the full session transcript, including all 5 subagents for any web search contamination: zero web calls were made (all verification ran as local code) and there are zero references to v2 anywhere - so I have confidence the agent did not see the answer key.
 
+A note on the example paper chosen: the paper was chosen because of the v1 to v2 characteristics and because it was published post training cutoff, in no way is this post a quality judgment. In fact, the report concluded the paper's result was correct. The intent is to show users how they can reduce volume of edits by using `Deep Review`.
+
 ### Appendix: Build Notes
 
 Skills are an amazing distribution vehicle. I originally built out a bespoke UI that operationalized the user flow of uploading, answering questions and receiving an artifact + an agent loop built on the Claude Agent SDK. I eventually threw it out in favor of building a skill on top of coding agent harnesses that have all the batteries included. This commoditization of agent-building up the stack makes it simple to get something out to lots of users as fast as possible.
