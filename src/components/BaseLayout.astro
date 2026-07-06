@@ -2,6 +2,8 @@
 import '../styles/global.css';
 
 const { title = 'Dipak Krishnan', active = 'home', description } = Astro.props;
+const desc = description ?? 'Personal site and writing by Dipak Krishnan.';
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -9,7 +11,16 @@ const { title = 'Dipak Krishnan', active = 'home', description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description ?? 'Personal site and writing by Dipak Krishnan.'} />
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Dipak Krishnan" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={desc} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

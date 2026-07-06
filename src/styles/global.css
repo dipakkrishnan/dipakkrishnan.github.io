@@ -27,12 +27,17 @@ a {
 
 nav {
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 nav a {
   color: #222;
+  display: inline-flex;
   font-size: 1.1em;
+  line-height: 1.2;
   margin-right: 24px;
+  padding: 4px 0;
   text-decoration: none;
 }
 
