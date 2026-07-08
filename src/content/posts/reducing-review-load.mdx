@@ -37,7 +37,7 @@ Structural errors compound. An inaccurate framing of prior work or a theorem app
 
 Users largely have three options to review their artifacts today: general AI chat interfaces, manual review, or utilizing coding agents.
 
-Using Claude or ChatGPT to review can help, but the system isn't specialized to inspect the artifact over tens of minutes or hours, nor does it have full context on the reviewer's goals. Unstructured chat produces surface-level reviews that don't go deep enough to decompose structural errors and why they exist.
+Using Claude or ChatGPT to review can help, but the system isn't specialized to inspect the artifact over tens of minutes or hours, nor does it have full context on the reviewer's goals. Unstructured chat produces reviews in a single pass. It does not deeply verify claims with code or check its own conclusions with another independent agent in the loop. These are necessary components for rigorous reviews that users can act on.
 
 Manual review is clearly arduous and error-prone, even if it allows the user to exercise their expert judgement over the structural foundations of the paper.
 
@@ -108,6 +108,8 @@ I ran the tool on the following ML [paper](https://arxiv.org/abs/2605.22472) - s
 `Deep Review` found two critical flaws in the central proof: an unjustified "full rank" step used to conclude that the recovered code matrix is a permutation, and a non-sequitur invertibility claim connecting the optimal-predictor argument to the theorem. It also showed the theorem itself was still *true* by exhaustive enumeration in code - the gaps were in the written proof, not the result. The authors' v2 deleted both flagged steps and rewrote the proof along the same lines the report suggested, and fixed two typos the tool's report called out.
 
 The run still contained a couple flaws. The paper's v2 also corrected a posterior formula and a row/column mistake that the review missed, and the report's empirical-design concerns went unaddressed in v2, so those remain open findings. Finally, I audited the full session transcript, including all 5 subagents for any web search contamination: zero web calls were made (all verification ran as local code) and there are zero references to v2 anywhere - so I have confidence the agent did not see the answer key.
+
+To form a baseline, I ran the same paper through Claude via chat without web search and with a prompt mirroring how a researcher would kick off a review workflow. The results are [here](https://gist.github.com/dipakkrishnan/16e983d77c7267f06f25130c545ba83c) under baseline. The chat-based run yielded decent results but missed the two critical issues that `Deep Review` found. It did position the paper well against existing literature (not a focus of the skill-based review) and found a framing contradiction in the paper focused on what chat calls a "soft" softmax failing to produce symbolic structure yet alluding to it as a potential cause behind generalization of softmax attention based architectures.
 
 A note on the example paper chosen - the paper was chosen because of the v1 → v2 characteristics and because it was published post training cutoff, in no way is this post a quality judgment. In fact, the report concluded the paper's result was correct. The intent is to show users how they can reduce volume of edits by using `Deep Review`. Of course, this is just one example, but I hope users can really push the tool for their own work!
 
