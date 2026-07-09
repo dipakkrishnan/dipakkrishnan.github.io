@@ -20,13 +20,15 @@ body {
 a {
   color: #3b6cb7;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2.5px;
 }
 
 .container {
   background: none;
   box-shadow: none;
   margin: 48px auto 0;
-  max-width: 720px;
+  max-width: 680px;
   padding: 0 24px 56px;
 }
 
@@ -91,9 +93,29 @@ pre {
 
 pre {
   background: #eef2e8;
+  border: 1px solid #dbe2d4;
   border-radius: 8px;
   overflow-x: auto;
   padding: 16px;
+}
+
+article > .post-meta + p {
+  color: #2a2d28;
+  font-size: 1.08em;
+  line-height: 1.5;
+  margin-bottom: 1.35em;
+}
+
+blockquote {
+  background: #f0f3ea;
+  border-left: 3px solid #9aa890;
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+  padding: 12px 16px;
+}
+
+blockquote p {
+  margin: 0;
 }
 
 .profile-layout {
@@ -169,6 +191,11 @@ pre {
 
   .container {
     padding: 0 14px 32px;
+  }
+
+  article > .post-meta + p {
+    font-size: 1em;
+    line-height: 1.55;
   }
 
   nav a {
