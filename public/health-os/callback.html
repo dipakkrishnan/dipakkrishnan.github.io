@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Health OS — connecting…</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; color: #222; }
+  @media (prefers-color-scheme: dark) { body { background: #111; color: #ddd; } a { color: #8ab4f8; } }
+  code { font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Health OS</h1>
+<p id="status">Handing the authorization back to the Health OS app on your computer…</p>
+<noscript><p>JavaScript is required to complete the connection.</p></noscript>
+<script>
+  // OAuth relay: Epic requires an https redirect URI in production, so this static
+  // page receives the authorization response and forwards it to the local app.
+  // The authorization code is useless without the PKCE verifier held by that app.
+  var target = "http://localhost:8965/callback" + window.location.search;
+  window.location.replace(target);
+  setTimeout(function () {
+    document.getElementById("status").innerHTML =
+      "If nothing happened, the Health OS app is not listening. Return to your terminal, " +
+      "make sure the connect command is running, then <a href=\"" + target + "\">click here to retry</a>.";
+  }, 2500);
+</script>
+</body>
+</html>

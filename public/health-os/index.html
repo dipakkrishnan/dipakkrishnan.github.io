@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health OS</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 42rem; margin: 3rem auto; padding: 0 1rem; color: #222; line-height: 1.55; }
+  @media (prefers-color-scheme: dark) { body { background: #111; color: #ddd; } a { color: #8ab4f8; } }
+  h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<h1>Health OS</h1>
+<p>A private, local-first personal health record with an on-demand multidisciplinary
+review layer. Health OS runs on your own computer: it connects to your health systems
+through their patient-access FHIR APIs, downloads your records to your device, and
+preserves them with full provenance — every normalized fact points back to the exact
+bytes it came from.</p>
+
+<h2>How it works</h2>
+<ul>
+  <li><strong>Connect:</strong> you sign in to your health system's patient portal
+  (for example MyChart) and authorize read-only access. Health OS registers itself as a
+  client on your device; credentials never leave your machine.</li>
+  <li><strong>Sync:</strong> your records — labs, medications, conditions, allergies,
+  encounters and more — are stored locally, versioned, and never overwritten.</li>
+  <li><strong>Ask:</strong> agent skills assemble grounded, citation-checked context
+  from your record to help you prepare for visits, reconcile medications, investigate
+  trends, and convene cross-specialty review perspectives.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>There is no Health OS server. Your data moves directly from your health system to
+your computer and stays there. Optional AI-powered features send selected context to a
+model API only under your own account, with explicit confirmation each time.</p>
+
+<h2>Links</h2>
+<ul>
+  <li><a href="/health-os/terms.html">Terms of use</a></li>
+  <li><a href="/posts/reducing-review-load/">Background: reducing review load</a></li>
+</ul>
+
+<p><em>Health OS is open source and under active development. It is not a medical
+device and does not replace care from your clinicians.</em></p>
+</body>
+</html>
