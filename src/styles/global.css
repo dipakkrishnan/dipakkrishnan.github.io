@@ -104,6 +104,14 @@ pre {
   font-size: 0.82em;
 }
 
+:not(pre) > code {
+  background: #eef2e8;
+  border: 1px solid #dbe2d4;
+  border-radius: 4px;
+  color: #2f4a2a;
+  padding: 0.08em 0.35em;
+}
+
 pre {
   background: #eef2e8;
   border: 1px solid #dbe2d4;

@@ -131,7 +131,7 @@ The system, as of today, is laid out below.
 
 ![Lore system architecture](/images/lore/lore-architecture.png)
 
-There were a number of interesting technical details during the build:
+There were a number of interesting technical details during the build.
 
 **Agent runtime**
 
