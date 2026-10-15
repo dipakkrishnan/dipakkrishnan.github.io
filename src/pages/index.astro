@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', (post) => post.data.draft !== true))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout title="About | Dipak Krishnan" active="home">
@@ -22,6 +26,8 @@ import BaseLayout from '../components/BaseLayout.astro';
 
   <h2>Posts</h2>
   <ul>
-    <li><a href="/posts/reducing-review-load/">Building a skill to reduce review load in AI-assisted work</a></li>
+    {posts.map((post) => (
+      <li><a href={`/posts/${post.data.slug}/`}>{post.data.title}</a></li>
+    ))}
   </ul>
 </BaseLayout>
