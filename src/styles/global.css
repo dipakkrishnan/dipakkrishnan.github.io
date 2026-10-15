@@ -56,7 +56,8 @@ nav a.active {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-sans);
   font-weight: 650;
   letter-spacing: 0;
@@ -74,6 +75,18 @@ h2 {
 
 h3 {
   margin-top: 2em;
+}
+
+h4 {
+  margin-top: 1.6em;
+}
+
+article img {
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  margin: 24px 0;
+  max-width: 100%;
 }
 
 p,
