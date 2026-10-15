@@ -89,6 +89,13 @@ article img {
   max-width: 100%;
 }
 
+article img.wide {
+  margin-left: 50%;
+  max-width: none;
+  transform: translateX(-50%);
+  width: min(1040px, 100vw - 32px);
+}
+
 p,
 li {
   line-height: 1.55;

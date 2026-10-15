@@ -129,7 +129,7 @@ After reading through user feedback, we started building a desktop app for Lore.
 
 The system, as of today, is laid out below.
 
-![Lore system architecture](/images/lore/lore-architecture.png)
+<a href="/images/lore/lore-architecture.png"><img src="/images/lore/lore-architecture.png" alt="Lore system architecture" class="wide" /></a>
 
 There were a number of interesting technical details during the build.
 
