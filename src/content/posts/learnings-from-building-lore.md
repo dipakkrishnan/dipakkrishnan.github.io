@@ -206,4 +206,4 @@ There are also more mechanical future items to work on that aid distribution.
 
 Ultimately, the ecosystem around agentic commerce is still spinning up and numerous apps will enter the market to meet agent demand. I think Lore's building blocks are a promising first step to better serve human and agent users.
 
-Try the app at [https://yourlore.dev/](https://yourlore.dev/), browse the marketplace at [https://yourlore.dev/marketplace](https://yourlore.dev/marketplace) and let us know what you think!
+Download the app at [https://yourlore.dev/](https://yourlore.dev/), browse the marketplace at [https://yourlore.dev/marketplace](https://yourlore.dev/marketplace) and let us know what you think!
