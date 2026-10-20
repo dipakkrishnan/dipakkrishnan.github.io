@@ -58,7 +58,7 @@ Lore is naturally a two-sided marketplace - it supports seller needs first and p
     - Opinionated paved path through the product vs. letting the user "figure it out"
     - Shortens time to publication
       - User opens Lore → immediately connects their context sources → sets up their store → pushes to it in their first product interaction
-      - Success = done the fewest number of clicks possible
+      - Success = done in the fewest clicks possible
 - How do I get paid?
   - Any user's first question once they set up their context (or maybe even prior to that)
   - Payment rails need to be clear to the user and obvious to set up
@@ -161,7 +161,7 @@ There were a number of interesting technical details during the build.
 
 Pi was the clear choice of agent runtime, mostly due to its simplicity and interoperability across models. It also worked natively in JavaScript environments. Lore requires a basic computer-using agent with tunable built-in primitives for compaction and context management. I considered building on the Claude Agent SDK or Codex SDK, but API differences make it quite hard to swap another provider's model into either SDK.
 
-Interactions between user and the Lore Agent are stored in sessions - running logs that capture a full agent conversation. Session management ships with Pi - a session is just an append-only JSONL file on disk. Lore keeps them in `~/.lore/.pi/sessions/<task>/` with a folder per task-type: capture, setup, publish and deploy and more. Persisting on disk was necessary to make tasks survive an app restart. Follow-ups on finished tasks used Pi native forking so that a finished task branched from the old session and started a new session file.
+Interactions between user and the Lore Agent are stored in sessions - running logs that capture a full agent conversation. Session management ships with Pi - a session is just an append-only JSONL file on disk. Lore keeps them in `~/.lore/.pi/sessions/<task>/` with a folder per task-type: capture, setup, publish, deploy and more. Persisting on disk was necessary to make tasks survive an app restart. Follow-ups on finished tasks used Pi native forking so that a finished task branched from the old session and started a new session file.
 
 Customizing behavior depending on where the user was in their journey was trivial - the skills we had built prior in the coding-agent-only experience could be re-purposed around Pi. We built a suite of custom tools on top of the usual `bash`, `read`, `write`, `edit` tools that mapped directly to the needs of the user:
 
